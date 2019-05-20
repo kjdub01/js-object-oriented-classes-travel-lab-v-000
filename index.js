@@ -20,3 +20,18 @@ class Driver {
     return parseInt( totalYears );
   }
 }
+
+class Routes {
+  constructor(beginningLocation, endingLocation) {
+    this.beginningLocation = beginningLocation;
+    this.endingLocation = endingLocation;
+  }
+  
+  blocksTraveled() {
+    
+  }
+  
+  estimatedTime() {
+    
+  }
+}
