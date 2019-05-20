@@ -30,11 +30,19 @@ class Route {
     return eastWest.indexOf( avenue );
   }
   
-  blocksTraveled() {
-    
+  blocksTravelled() {
+    let horizontalDistance =
+      this.avenueToInteger( this.endingLocation.horizontal ) -
+      this.avenueToInteger( this.beginningLocation.horizontal );
+    let verticalDistance =
+      this.endingLocation.vertical - this.beginningLocation.vertical;
+    return Math.abs( horizontalDistance ) + Math.abs( verticalDistance );
   }
-  
-  estimatedTime() {
-    
+  estimatedTime( peak ) {
+    if ( peak ) {
+      return this.blocksTravelled() / 2;
+    } else {
+      return this.blocksTravelled() / 3;
+    }
   }
 }
